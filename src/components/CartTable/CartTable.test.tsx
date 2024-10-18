@@ -1,19 +1,28 @@
+// CartTable.test.tsx
 import { render, screen } from "@testing-library/react";
 import CartTable from "./CartTable";
 import "@testing-library/jest-dom";
 import { Provider } from "react-redux";
-import { configureStore } from "@reduxjs/toolkit";
+import { configureStore, EnhancedStore } from "@reduxjs/toolkit";
 import cartReducer from "../../state/slices/cartSlice";
 import { BrowserRouter } from "react-router-dom";
 import { beforeEach, describe, expect, it } from "vitest";
+import { CartItem } from "../../types";
 
-const mockCartItems = [
+interface RootState {
+  cart: {
+    items: CartItem[];
+  };
+}
+
+const mockCartItems: CartItem[] = [
   {
     id: 1,
     name: "Product 1",
     description: "Description of product 1",
     price: 10.0,
     quantity: 2,
+    validUntil: "2024-11-15",
   },
   {
     id: 2,
@@ -21,21 +30,24 @@ const mockCartItems = [
     description: "Description of product 2",
     price: 20.0,
     quantity: 1,
+    validUntil: "2024-11-15",
   },
 ];
 
-let store;
+let store: EnhancedStore<RootState>;
 
 beforeEach(() => {
+  const preloadedState: Partial<RootState> = {
+    cart: {
+      items: mockCartItems,
+    },
+  };
+
   store = configureStore({
     reducer: {
       cart: cartReducer,
     },
-    preloadedState: {
-      cart: {
-        items: mockCartItems,
-      },
-    },
+    preloadedState,
   });
 });
 
