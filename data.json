@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop XPro 15",
+    "description": "High-performance laptop with 16GB RAM and 512GB SSD.",
+    "validUntil": "2024-10-30",
+    "price": 1200.0
+  },
+  {
+    "id": 2,
+    "name": "Smartphone Z9",
+    "description": "Latest smartphone with 6.5-inch display and 128GB storage.",
+    "validUntil": "2024-11-15",
+    "price": 850.03
+  },
+  {
+    "id": 3,
+    "name": "Wireless Headphones Pro",
+    "description": "Noise-cancelling over-ear headphones with 30-hour battery life.",
+    "validUntil": "2024-09-01",
+    "price": 250.78
+  },
+  {
+    "id": 4,
+    "name": "4K Monitor UltraSharp",
+    "description": "27-inch 4K monitor with HDR support and ultra-thin bezels.",
+    "validUntil": "2025-01-20",
+    "price": 500.23
+  },
+  {
+    "id": 5,
+    "name": "Mechanical Keyboard",
+    "description": "RGB mechanical keyboard with customizable switches.",
+    "validUntil": "2024-12-10",
+    "price": 100.31
+  },
+  {
+    "id": 6,
+    "name": "Gaming Mouse GX100",
+    "description": "High-precision gaming mouse with 6 programmable buttons.",
+    "validUntil": "2025-01-25",
+    "price": 60.0
+  },
+  {
+    "id": 7,
+    "name": "Portable SSD 1TB",
+    "description": "Ultra-fast portable SSD with 1TB storage and USB-C connection.",
+    "validUntil": "2024-06-01",
+    "price": 180.5
+  },
+  {
+    "id": 8,
+    "name": "Bluetooth Speaker BoomBox",
+    "description": "Waterproof Bluetooth speaker with 10-hour battery life.",
+    "validUntil": "2025-05-12",
+    "price": 90.64
+  },
+  {
+    "id": 9,
+    "name": "Smartwatch FitPro",
+    "description": "Fitness tracker with heart rate monitor and GPS.",
+    "validUntil": "2025-09-15",
+    "price": 130.87
+  },
+  {
+    "id": 10,
+    "name": "Tablet M10",
+    "description": "10.1-inch tablet with 64GB storage and stylus support.",
+    "validUntil": "2024-12-05",
+    "price": 400.54
+  }
+]
