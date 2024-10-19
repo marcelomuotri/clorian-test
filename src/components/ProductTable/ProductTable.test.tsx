@@ -67,10 +67,8 @@ describe("ProductTable Component", () => {
     const addToCartButtons = screen.getAllByTestId(/^add-to-cart-button-/);
     expect(addToCartButtons).toHaveLength(mockProducts.length);
 
-    // Click the first "Add to Cart" button
     fireEvent.click(addToCartButtons[0]);
 
-    // Wait for the Snackbar to appear
     expect(
       await screen.findByText("Product added to cart!")
     ).toBeInTheDocument();

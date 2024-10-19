@@ -12,6 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import CartRow from "./CartRow/CartRow";
 import { useCart } from "../../pages/Cart/hooks/useCart";
+import { cartTableColumns } from "../../constants/constants";
 
 const CartTable = () => {
   const navigate = useNavigate();
@@ -27,24 +28,11 @@ const CartTable = () => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>
-              <strong>Product Name</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Description</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Price</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Quantity</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Total Price per unit</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Actions</strong>
-            </TableCell>
+            {cartTableColumns.map((column) => (
+              <TableCell key={column}>
+                <strong>{column}</strong>
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>

@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import ProductRow from "./ProductRow/ProductRow";
+import { productTableColumns } from "../../constants/constants";
 
 interface Product {
   id: number;
@@ -43,21 +44,11 @@ const ProductTable = ({ products }: { products: Product[] }) => {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>
-              <strong>Product Name</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Description</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Price</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Quantity</strong>
-            </TableCell>
-            <TableCell>
-              <strong>Add to Cart</strong>
-            </TableCell>
+            {productTableColumns.map((column) => (
+              <TableCell key={column}>
+                <strong>{column}</strong>
+              </TableCell>
+            ))}
           </TableRow>
         </TableHead>
         <TableBody>

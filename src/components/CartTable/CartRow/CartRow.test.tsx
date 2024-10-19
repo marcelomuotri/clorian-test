@@ -2,6 +2,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import CartRow from "./CartRow";
 import "@testing-library/jest-dom";
+import { Table, TableBody } from "@mui/material";
 import { describe, expect, it, vi } from "vitest";
 
 describe("CartRow Component", () => {
@@ -13,12 +14,24 @@ describe("CartRow Component", () => {
     quantity: 2,
   };
 
-  it("should render without errors", () => {
-    render(<CartRow item={mockItem} onRemoveItem={() => {}} />);
+  it("Should render without errors", () => {
+    render(
+      <Table>
+        <TableBody>
+          <CartRow item={mockItem} onRemoveItem={() => {}} />
+        </TableBody>
+      </Table>
+    );
   });
 
   it("should display product information correctly", () => {
-    render(<CartRow item={mockItem} onRemoveItem={() => {}} />);
+    render(
+      <Table>
+        <TableBody>
+          <CartRow item={mockItem} onRemoveItem={() => {}} />
+        </TableBody>
+      </Table>
+    );
 
     expect(screen.getByText(mockItem.name)).toBeInTheDocument();
     expect(screen.getByText(mockItem.description)).toBeInTheDocument();
@@ -34,7 +47,13 @@ describe("CartRow Component", () => {
   it("should call onRemoveItem with correct id when 'Remove' button is clicked", () => {
     const mockOnRemoveItem = vi.fn();
 
-    render(<CartRow item={mockItem} onRemoveItem={mockOnRemoveItem} />);
+    render(
+      <Table>
+        <TableBody>
+          <CartRow item={mockItem} onRemoveItem={mockOnRemoveItem} />
+        </TableBody>
+      </Table>
+    );
 
     const removeButton = screen.getByText("Remove");
     fireEvent.click(removeButton);
